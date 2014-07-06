@@ -1,9 +1,6 @@
-require "lotus/model"
-require "exercise"
+require "repository"
 
-class ExerciseRepository
-  include Lotus::Repository
-
+class ExerciseRepository < Repository
   def self.by_type(type)
     query { where(type: type) }
   end
@@ -16,18 +13,3 @@ class ExerciseRepository
     query { where("calories BETWEEN #{from} AND #{to}") }
   end
 end
-
-mapper = Lotus::Model::Mapper.new do
-  collection :exercises do
-    entity Exercise
-
-    attribute :id, Integer
-    attribute :type, String
-    attribute :calories, Integer
-    attribute :minutes, Integer
-  end
-end
-
-mapper.load!
-
-ExerciseRepository.adapter = DatabaseAdapter.build(mapper)

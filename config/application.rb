@@ -1,6 +1,8 @@
 require "pg"
 require "lotus/model/adapters/sql_adapter"
 require "lotus/model/adapters/memory_adapter"
+require "lotus/model"
+require "mappings"
 
 # Single place to switch adapter for all repositories
 class DatabaseAdapter
