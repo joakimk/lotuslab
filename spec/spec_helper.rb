@@ -1,10 +1,6 @@
 $: << File.expand_path("config")
-$: << File.expand_path("app/models")
-$: << File.expand_path("app/repositories")
 
-ENV["SQL_CONNECTION_URL"] = "postgres://localhost:5432/lotuslab"
-
-require "application"
+require_relative "../config/application"
 
 unless ENV["UNIT_TEST"]
   database = Sequel.connect(ENV["SQL_CONNECTION_URL"])

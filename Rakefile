@@ -12,3 +12,7 @@ namespace :spec do
     Rake::Task["default"].invoke
   end
 end
+
+task :console do
+  system("irb -r #{Dir.pwd}/config/application.rb") || exit(1)
+end
