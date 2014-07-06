@@ -1,5 +1,3 @@
-require "lotus/model"
-
 class Exercise
   include Lotus::Entity
 
