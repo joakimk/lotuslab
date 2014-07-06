@@ -16,3 +16,5 @@ Things to figure out:
 * Simplifications, not everything needs custom mappings and repository.
   - Mappings could be generated from schema when no custom mappings are set?
 * Explore using in-memory for use-case level tests that would otherwise be integrated tests.
+* Different environments
+* Validations: in form objects instead? If so, what about uniqueness?
